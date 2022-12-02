@@ -2270,5 +2270,5 @@ for i, val in enumerate(arr_tmp):
         calories.append(sum(arr_tmp[index_check:i]))
         index_check = i + 1
 calories = sorted(calories, reverse=True)
-Elf_most_calories = calories[0]
-print("The total calories of efl with the most calories is", Elf_most_calories)
+print("The total calories of the 3 most calories elves is",
+      calories[0]+calories[1]+calories[2])
