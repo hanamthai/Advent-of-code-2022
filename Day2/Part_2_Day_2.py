@@ -2526,4 +2526,4 @@ if __name__ == '__main__':
         totalScore += lost_draw_won(i)
         totalScore += score_of_shape(i)
 
-print("Total score be if everything goes exactly according to my strategy guide is", totalScore)
+    print("Total score be if everything goes exactly according to my strategy guide is", totalScore)
