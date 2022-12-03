@@ -2503,21 +2503,21 @@ arr_lst = arr.split('\n')
 
 
 def lost_draw_won(round):
-    if (round[2] == 'X' and round[0] == 'B') or (round[2] == 'Y' and round[0] == 'C') or (round[2] == 'Z' and round[0] == 'A'):
+    if round[2] == 'X':
         return 0
-    elif (round[2] == 'X' and round[0] == 'A') or (round[2] == 'Y' and round[0] == 'B') or (round[2] == 'Z' and round[0] == 'C'):
+    elif round[2] == 'Y':
         return 3
     else:
         return 6
 
 
 def score_of_shape(round):
-    if round[2] == 'X':
-        return 1
-    elif round[2] == 'Y':
+    if (round[2] == 'X' and round[0] == 'A') or (round[2] == 'Y' and round[0] == 'C') or (round[2] == 'Z' and round[0] == 'B'):
+        return 3
+    elif (round[2] == 'X' and round[0] == 'C') or (round[2] == 'Y' and round[0] == 'B') or (round[2] == 'Z' and round[0] == 'A'):
         return 2
     else:
-        return 3
+        return 1
 
 
 if __name__ == '__main__':
@@ -2526,4 +2526,4 @@ if __name__ == '__main__':
         totalScore += lost_draw_won(i)
         totalScore += score_of_shape(i)
 
-print("Total score be if everything goes exactly according to my strategy guide is ", totalScore)
+print("Total score be if everything goes exactly according to my strategy guide is", totalScore)
