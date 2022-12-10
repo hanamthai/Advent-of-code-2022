@@ -2029,40 +2029,50 @@ column_T = 0
 # đánh dấu vị trí đầu tiên của T trước khi vào vòng lặp
 grid[0][0] = '#'            # grid[row][column]
 
-
-def calculate_step(col_H, r_H):
-    global column_H, column_T, row_H, row_T, privious_column_H, privious_row_H
-    for i in range(1, int(step[2:])+1):
-        if col_H == 1:
-            column_H += 1
-        elif col_H == -1:
-            column_H -= 1
-        elif r_H == 1:
-            row_H += 1
-        elif r_H == -1:
-            row_H -= 1
-        if abs(column_H - column_T) == 2 or abs(row_H - row_T) == 2:
-            row_T = privious_row_H
-            column_T = privious_column_H
-            grid[row_T][column_T] = '#'
-
-        privious_column_H = column_H
-        privious_row_H = row_H
-
-
 for step in arr_steps:
     if step[0] == 'R':
-        calculate_step(1, 0)
+        for i in range(1, int(step[2:])+1):
+            column_H += 1
+            if abs(column_H - column_T) == 2 or abs(row_H - row_T) == 2:
+                row_T = privious_row_H
+                column_T = privious_column_H
+                grid[row_T][column_T] = '#'
+
+            privious_column_H = column_H
+            privious_row_H = row_H
 
     elif step[0] == 'L':
-        calculate_step(-1, 0)
+        for i in range(1, int(step[2:])+1):
+            column_H -= 1
+            if abs(column_H - column_T) == 2 or abs(row_H - row_T) == 2:
+                row_T = privious_row_H
+                column_T = privious_column_H
+                grid[row_T][column_T] = '#'
+
+            privious_column_H = column_H
+            privious_row_H = row_H
 
     elif step[0] == 'U':
-        calculate_step(0, 1)
+        for i in range(1, int(step[2:])+1):
+            row_H += 1
+            if abs(column_H - column_T) == 2 or abs(row_H - row_T) == 2:
+                row_T = privious_row_H
+                column_T = privious_column_H
+                grid[row_T][column_T] = '#'
+
+            privious_column_H = column_H
+            privious_row_H = row_H
 
     elif step[0] == 'D':
-        calculate_step(0, -1)
+        for i in range(1, int(step[2:])+1):
+            row_H -= 1
+            if abs(column_H - column_T) == 2 or abs(row_H - row_T) == 2:
+                row_T = privious_row_H
+                column_T = privious_column_H
+                grid[row_T][column_T] = '#'
 
+            privious_column_H = column_H
+            privious_row_H = row_H
 
 count_T = 0
 for i in grid:
