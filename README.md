@@ -1,7 +1,7 @@
-# Advent of code 2022
+# :snowflake: Advent of code 2022 :snowflake:
 
-## In this competition, I only stopped on the 13th day, but I tried my best. Hopefully next year I will complete more days.
+## :santa:In this competition, I only stopped on the 13th day, but I tried my best.:snowman: Hopefully next year I will complete more days.
 
-## Merry Christmas.
+## :tada:Merry Christmas :two::five: / :one::two: / :two::zero::two::two: :clock12:
 
-<img src="\img_star.png" height="500" />
+<div><img src="img_star.png"/></div>
